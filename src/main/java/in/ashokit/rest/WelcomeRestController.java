@@ -15,11 +15,18 @@ public class WelcomeRestController {
 		logger.info("***** WelcomeRestController::Constructor *****");
 	}
 
-	@GetMapping(value = "/welcome/{name}")
-	public String welcomeMsg(@PathVariable("name") String name) {
-		logger.info("***** welcomeMsg() execution start *****");
-		String msg = "Welcome to Ashok IT..!!";
-		logger.info("***** welcomeMsg() execution end *****");
-		return msg;
+	//@GetMapping(value = "/welcome/{name}")
+	//public String welcomeMsg(@PathVariable("name") String name) {
+	//	logger.info("***** welcomeMsg() execution start *****");
+	//	String msg = "Welcome to Ashok IT..!!";
+	//	logger.info("***** welcomeMsg() execution end *****");
+	//	return msg;
+	//}
+        @GetMapping(value = "/welcome/{name}")
+         public String welcomeMsg(@PathVariable("name") String name) {
+	    logger.info("***** welcomeMsg() execution start *****");
+	    String msg = "Welcome to Ashok IT, " + name + "!";
+	    logger.info("***** welcomeMsg() execution end *****");
+	    return msg;
 	}
 }
